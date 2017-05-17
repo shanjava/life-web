@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false" monitoring="autodetect"
+         dynamicConfig="true">
+         
+    <diskStore path="java.io.tmpdir"/>
+    <!--name:Cache的唯一标识名称
+          maxBytesLocalHeap是用来限制缓存所能使用的堆内存的最大字节数的，
+      其单位可以是K、M或G，不区分大小写。默认是0，表示不限制。
+      但是当我们没有指定CacheManager级别的maxBytesLocalHeap时，
+      我们必须在每一个Cache上指定maxBytesLocalHeap或maxEntriesLocalHeap。
+             maxEntriesLocalDisk:磁盘中的最大对象数，默认为0不限制
+            eternal:elements是否永久有效，如果为true，timeouts将被忽略，element将永不过期
+            diskSpoolBufferSizeMB:这个参数设置DiskStore（磁盘缓存）的缓存区大小。
+      默认是30MB。每个Cache都应该有自己的一个缓冲区。
+            overflowToOffHeap：boolean类型，默认为false。表示是否允许Cache使用非堆内存
+      进行存储，非堆内存是不受Java GC影响的。该属性只对企业版Ehcache有用。
+            timeToIdleSeconds：单位是秒，表示一个元素所允许闲置的最大时间，
+      也就是说一个元素在不被请求的情况下允许在缓存中待的最大时间。默认是0，表示不限制。
+
+             timeToLiveSeconds：单位是秒，表示无论一个元素闲置与否，其允许在Cache中存在的
+      最大时间。默认是0，表示不限制。
+      
+      
+      -->
+    <defaultCache
+           maxEntriesLocalHeap="10000"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="20"
+           timeToLiveSeconds="60">
+    </defaultCache>
+
+    <!--
+    Sample cache named sampleCache1
+    This cache contains a maximum in memory of 10000 elements, and will expire
+    an element if it is idle for more than 5 minutes and lives for more than
+    10 minutes.
+
+    If there are more than 10000 elements it will overflow to the
+    disk cache, which in this configuration will go to wherever java.io.tmp is
+    defined on your system. On a standard Linux system this will be /tmp"
+    -->
+    <cache name="sampleCache1"
+           maxEntriesLocalHeap="10000"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           overflowToDisk="true"
+           diskSpoolBufferSizeMB="20"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off"
+            />
+            
+    <cache name="userCache"
+           maxEntriesLocalHeap="10000"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           overflowToDisk="true"
+           diskSpoolBufferSizeMB="100"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off"
+            />  
+
+    <cache name="shopCache"
+           maxEntriesLocalHeap="10000"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           overflowToDisk="true"
+           diskSpoolBufferSizeMB="100"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off"
+            />  
+            
+    <cache name="pageCache"
+           maxEntriesLocalHeap="10000"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           overflowToDisk="true"
+           diskSpoolBufferSizeMB="100"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off"
+            />  
+            
+    <!--
+    Sample cache named sampleCache2
+    This cache has a maximum of 1000 elements in memory. There is no overflow to disk, so 1000
+    is also the maximum cache size. Note that when a cache is eternal, timeToLive and
+    timeToIdle are not used and do not need to be specified.
+    -->
+    <cache name="sampleCache2"
+           maxEntriesLocalHeap="1000"
+           eternal="true"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="FIFO"
+            />
+
+    <!--
+    Sample cache named sampleCache3. This cache overflows to disk. The disk store is
+    persistent between cache and VM restarts. The disk expiry thread interval is set to 10
+    minutes, overriding the default of 2 minutes.
+    -->
+    <cache name="sampleCache3"
+           maxEntriesLocalHeap="500"
+           eternal="false"
+           overflowToDisk="true"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           diskPersistent="true"
+           diskExpiryThreadIntervalSeconds="1"
+           memoryStoreEvictionPolicy="LFU"
+            />
+
+
+
+</ehcache>

@@ -1,0 +1,63 @@
+Table: article
+-------------+--------------+------+-----+-------------------+---------
+ Field       | Type         | Null | Key | Default           | Remarks 
+-------------+--------------+------+-----+-------------------+---------
+ id          | INT(10)      | NO   | PRI |                   |         
+ articleNo   | VARCHAR(32)  | YES  |     |                   | 文章id    
+ title       | VARCHAR(100) | YES  |     |                   | 标题      
+ poster      | VARCHAR(255) | YES  |     |                   | 海报      
+ content     | TEXT(65535)  | YES  |     |                   | 内容      
+ publishTime | DATETIME(19) | YES  |     | CURRENT_TIMESTAMP | 发表时间    
+ userNo      | VARCHAR(32)  | YES  |     |                   | 作者      
+ updateTime  | DATETIME(19) | YES  |     |                   | 更新时间    
+ del_flag    | CHAR(2)      | YES  |     |                   | 删除标记    
+-------------+--------------+------+-----+-------------------+---------
+
+Table: dictionary
+--------------+-------------+------+-----+---------+---------
+ Field        | Type        | Null | Key | Default | Remarks 
+--------------+-------------+------+-----+---------+---------
+ id           | INT(10)     | NO   | PRI |         |         
+ dictionaryNo | VARCHAR(32) | YES  |     |         | 字典表     
+ name         | VARCHAR(32) | YES  |     |         | 标签名称    
+ type         | VARCHAR(32) | YES  |     |         | 工具 ，文档分类   语言
+--------------+-------------+------+-----+---------+---------
+
+Table: friend_link
+-------+--------------+------+-----+---------+---------
+ Field | Type         | Null | Key | Default | Remarks 
+-------+--------------+------+-----+---------+---------
+ id    | INT(10)      | NO   | PRI |         |         
+ name  | VARCHAR(32)  | YES  |     |         |         
+ url   | VARCHAR(255) | YES  |     |         |         
+ rank  | INT(10)      | YES  |     |         | 排序      
+-------+--------------+------+-----+---------+---------
+
+Table: link_dictionary
+--------------+-------------+------+-----+---------+---------
+ Field        | Type        | Null | Key | Default | Remarks 
+--------------+-------------+------+-----+---------+---------
+ id           | INT(10)     | NO   | PRI |         |         
+ linkType     | VARCHAR(32) | YES  |     |         | 关联的类型   
+ dictionaryNo | VARCHAR(32) | YES  |     |         | 字典no    
+ linkNo       | VARCHAR(32) | YES  |     |         | 关联no    
+--------------+-------------+------+-----+---------+---------
+
+Table: sys_user
+------------+--------------+------+-----+-------------------+---------
+ Field      | Type         | Null | Key | Default           | Remarks 
+------------+--------------+------+-----+-------------------+---------
+ id         | INT(10)      | NO   | PRI |                   |         
+ userNo     | VARCHAR(32)  | YES  |     |                   | 用户号     
+ loginName  | VARCHAR(32)  | YES  |     |                   | 用户名称    
+ password   | VARCHAR(32)  | YES  |     |                   | 密码      
+ age        | INT(10)      | YES  |     |                   | 年龄      
+ sex        | INT(10)      | YES  |     | 0                 | 0 男 1女  
+ phone      | VARCHAR(11)  | YES  |     |                   |         
+ realname   | VARCHAR(20)  | YES  |     |                   | 真实姓名    
+ email      | VARCHAR(32)  | YES  |     |                   |         
+ del_flag   | CHAR(2)      | YES  |     |                   | 删除标记    
+ createTime | DATETIME(19) | YES  |     | CURRENT_TIMESTAMP | 创建时间    
+ updateTime | DATETIME(19) | YES  |     |                   | 修改时间    
+------------+--------------+------+-----+-------------------+---------
+
