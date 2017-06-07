@@ -13,7 +13,7 @@ public class AdminFilter implements Filter {
     private final Logger log = Logger.getLogger(AdminFilter.class);
 
     public void destroy() {
-        // TODO Auto-generated method stub
+        // ------TODO Auto-generated method stub
 
     }
 
