@@ -1,8 +1,9 @@
 package controller.admin;
 
+import com.jfinal.aop.Clear;
 import com.jfinal.core.Controller;
 import com.jfinal.kit.StrKit;
-
+@Clear
 public class CaptchaController extends Controller {
     public void index(){
         renderJsp("index.jsp");
@@ -10,6 +11,7 @@ public class CaptchaController extends Controller {
     /**
      * 提供生成验证码的图片流
      */
+    @Clear
     public void img(){
 
         renderCaptcha();

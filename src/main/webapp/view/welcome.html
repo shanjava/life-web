@@ -1,0 +1,318 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--#include file="head_ssi_view.html" -->
+    <link rel="stylesheet" href="../static/time/style2.css" type="text/css" media="screen"/>
+
+    <![endif]-->
+    <title>我的桌面</title>
+</head>
+<!--#echo var="DATE_LOCAL"-->
+
+<body>
+<div class="page-container">
+    <!--<p class="f-20 text-success">欢迎使用H-ui.admin <span class="f-14">v3.0</span>后台模版！</p>-->
+    <div style="width: 400px;float: left;height: 100px">
+    <p>登录次数：18 </p>
+    <p>登录IP：<b id="IP">222.35.131.79.1</b> 上次登录时间：2014-6-14 11:19:55 </p>
+    </div>
+<div style="width:370px;height: 50px;margin-top: -35px;float: right " >
+    <div id="clock" class="light">
+        <div class="display">
+            <div class="date"></div>
+            <div class="digits"></div>
+        </div>
+    </div>
+</div>
+    <table class="table table-border table-bordered table-bg">
+        <thead>
+        <tr>
+            <th colspan="7" scope="col">信息统计</th>
+        </tr>
+        <tr class="text-c">
+            <th>统计</th>
+            <th>资讯库</th>
+            <th>图片库</th>
+            <th>产品库</th>
+            <th>用户</th>
+            <th>管理员</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-c">
+            <td>总数</td>
+            <td>92</td>
+            <td>9</td>
+            <td>0</td>
+            <td>8</td>
+            <td>20</td>
+        </tr>
+        <tr class="text-c">
+            <td>今日</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="text-c">
+            <td>昨日</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="text-c">
+            <td>本周</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr class="text-c">
+            <td>本月</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table table-border table-bordered table-bg mt-20">
+        <thead>
+        <tr>
+            <th colspan="2" scope="col">服务器信息</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th width="30%">服务器计算机名</th>
+            <td><span id="lbServerName">http://127.0.0.1/</span></td>
+        </tr>
+        <tr>
+            <td>服务器IP地址</td>
+            <td>59.110.152.216/---/172.17.239.185</td>
+        </tr>
+        <tr>
+            <td>服务器地域</td>
+            <td>华北 2 可用区 A</td>
+        </tr>
+        <tr>
+            <td>服务器域名</td>
+            <td>code.shanjun.wang</td>
+        </tr>
+        <tr>
+            <td>服务器端口</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>tomcat版本</td>
+            <td>tomcat 8</td>
+        </tr>
+        <tr>
+            <td>nginx版本</td>
+            <td>nginx 1.12.0</td>
+        </tr>
+        <tr>
+            <td>本文件所在文件夹</td>
+            <td>/data/wwwroot/code.shanjun.wang</td>
+        </tr>
+        <tr>
+            <td>服务器操作系统</td>
+            <td>CentOS 7.2 64位
+            </td>
+        </tr>
+        <tr>
+            <td>服务器的语言种类</td>
+            <td>Chinese (People's Republic of China)</td>
+        </tr>
+        <tr>
+            <td>.NET Framework 版本</td>
+            <td>2.050727.3655</td>
+        </tr>
+        <tr>
+            <td>服务器当前时间</td>
+            <td id="ecsTime">2014-6-14 12:06:23</td>
+        </tr>
+        <tr>
+            <td>服务器启动时间</td>
+            <td id="startTime">TODO</td>
+        </tr>
+
+        <tr>
+            <td>CPU 类型</td>
+            <td>x86 Family 6 Model 42 Stepping 1, GenuineIntel</td>
+        </tr>
+        <tr>
+            <td>内存</td>
+            <td>1024M</td>
+        </tr>
+        <tr>
+            <td>带宽</td>
+            <td>1M</td>
+        </tr>
+        <tr>
+            <td>线程总量</td>
+            <td id="threadCount">TODO</td>
+        </tr>
+        <tr>
+            <td>空闲内存</td>
+            <td id="freeMemory"></td>
+        </tr>
+        <tr>
+            <td>内存总量</td>
+            <td id="totalMemory">TODO</td>
+        </tr>
+        <tr>
+            <td>java虚拟机允许开启的最大的内存</td>
+            <td id="maxMemory">TODO</td>
+        </tr>
+
+
+        <tr>
+            <td>当前Session数量</td>
+            <td>无</td>
+        </tr>
+        <tr>
+            <td>当前SessionID</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>当前系统用户名</td>
+            <td>admin</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer class="footer mt-20">
+    <div class="container">
+        <p>感谢jQuery、layer、laypage、Validform、UEditor、My97DatePicker、iconfont、Datatables、WebUploaded、icheck、highcharts、bootstrap-Switch<br>
+            Copyright &copy;2015-2017 H-ui.admin v3.0 All Rights Reserved.<br>
+            本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
+    </div>
+</footer>
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/time/moment.min.js"></script>
+<script type="text/javascript" src="../js/util.js"></script>
+<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script>
+
+
+    //循环执行，每隔3秒钟执行一次showalert（）
+    //    window.setInterval(util.escTime, 10000);
+
+
+</script>
+
+
+<script>
+    $(function () {
+        var escTime = util.escTime();
+        $("#escTime").text(escTime)
+        sys();
+        //获取IP
+
+        var ip = util.ip();
+        var cookie= $.cookie("JSESSIONID");
+
+        $.cookie("user", "123");
+        console.log($.cookie("user"));
+
+//---------------
+
+
+        var clock = $('#clock');
+        //定义数字数组0-9
+        var digit_to_name = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+        //定义星期
+        var weekday = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+
+        var digits = {};
+
+        //定义时分秒位置
+        var positions = [
+            'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
+        ];
+
+        var digit_holder = clock.find('.digits');
+
+        $.each(positions, function () {
+            if (this == ':') {
+                digit_holder.append('<div class="dots">');
+            }
+            else {
+                var pos = $('<div>');
+
+                for (var i = 1; i < 8; i++) {
+                    pos.append('<span class="d' + i + '">');
+                }
+
+                digits[this] = pos;
+                digit_holder.append(pos);
+            }
+        });
+        (function update_time() {
+
+            //调用moment.js来格式化时间
+            var now = moment().format("HHmmss");
+
+            digits.h1.attr('class', digit_to_name[now[0]]);
+            digits.h2.attr('class', digit_to_name[now[1]]);
+            digits.m1.attr('class', digit_to_name[now[2]]);
+            digits.m2.attr('class', digit_to_name[now[3]]);
+            digits.s1.attr('class', digit_to_name[now[4]]);
+            digits.s2.attr('class', digit_to_name[now[5]]);
+
+            var date = moment().format("YYYY年MM月DD日");
+            var week = weekday[moment().format('d')];
+            $(".date").html(date + ' ' + week);
+
+
+            // 每秒钟运行一次
+            setTimeout(update_time, 1000);
+
+        })();
+    });
+
+
+    // 获取项目内存信息
+    function sys() {
+
+        $.ajax({
+            url: "/life-web/system/projectInfo",
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                console.log(data.freeMemory);
+                $("#freeMemory").text(data.freeMemory);
+                $("#totalMemory").text(data.totalMemory);
+                $("#maxMemory").text(data.maxMemory);
+                $("#startTime").text(timeStamp2String(new Date(data.startTime)));
+                $("#threadCount").text(data.threadCount);
+
+
+            }, error: function (data) {
+            }
+
+        });
+
+
+    }
+
+
+</script>
+<div style="text-align:center;clear:both">
+</div>
+
+
+</body>
+</html>

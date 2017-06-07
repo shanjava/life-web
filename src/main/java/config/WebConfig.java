@@ -13,6 +13,7 @@ import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.template.Engine;
+import interceptor.SessionInterceptor;
 import model._MappingKit;
 import webRoutes.AdminRoutes;
 import webRoutes.FrontRoutes;
@@ -62,7 +63,7 @@ public class WebConfig extends JFinalConfig {
        _MappingKit.mapping(arp);
 
 //最先创建的RedisPlugin 对象所持有的 Cache 对象将成为主缓存对象，主缓存对象可通过 Redis.use()直接获取，否则需要提供 cacheName 参数才能获取，例如：Redis.use(“other”)
-        RedisPlugin redis= new RedisPlugin("userCache","localhsot");plugins.add(redis);
+        RedisPlugin redis= new RedisPlugin("userCache","localhost");plugins.add(redis);
 
       //   添加cache 配置
         plugins.add(new EhCachePlugin());
@@ -70,7 +71,7 @@ public class WebConfig extends JFinalConfig {
     }
 
     public void configInterceptor(Interceptors interceptors) {
-
+        interceptors.add(new SessionInterceptor());
 
     }
 

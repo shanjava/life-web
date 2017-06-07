@@ -20,14 +20,18 @@
     <![endif]-->
     <title>后台登录</title>
     <!--<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">-->
+
+
     <!--<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">-->
 </head>
 <body>
+<!--#echo var="DATE_LOCAL"-->
+
 <input type="hidden" id="TenantId" name="TenantId" value=""/>
 <div class="header"></div>
 <div class="loginWraper">
     <div id="loginform" class="loginBox">
-        <form class="form form-horizontal" action="/login/login" onsubmit="return sumbit_val()" method="post">
+        <form class="form form-horizontal" onsubmit=" sumbit_val()" method="post">
             <div class="row cl">
                 <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
                 <div class="formControls col-xs-8">
@@ -44,7 +48,7 @@
 
 
                 <div class="formControls col-xs-8 col-xs-offset-3">
-                    <input class="input-text size-L" id="captch" type="text" id="captch" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}"
+                    <input class="input-text size-L" id="captcha" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}"
                            onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
                     <img id="captchaImg" src="captcha/img" style="margin-left: 20px" width="100" height="35" onclick="changeCaptcha()"/> <a
                         href="javascript:changeCaptcha()" style="margin-left: 20px">换一个</a></div>
@@ -58,7 +62,8 @@
             </div>
             <div class="row cl">
                 <div class="formControls col-xs-8 col-xs-offset-3">
-                    <input name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+                    <input name="" type="button" onclick=" sumbit_val()" class="btn btn-success radius size-L"
+                           value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
                     <input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
                 </div>
             </div>
@@ -67,6 +72,7 @@
 </div>
 <div class="footer">Copyright © 平凡超越 京ICP备15062345号</div>
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
 <!--此乃百度统计代码，请自行删除-->
 <script>
@@ -82,47 +88,45 @@
 
         var loginName = $("#loginName").val();
         var pwd = $("#password").val();
-        var captch = $("#captch").val();
-        var urlpath="/login/validate"
-        if(!!captch){
+        var captcha = $("#captcha").val();
+        var urlpath = "/life-web/login/validate"
+        if (!!captcha) {
             $.ajax({
-                url:urlpath,
-                type:"post",
+                url: urlpath,
+                type: "post",
                 dataType: "json",
-                data:{
-                    loginName:loginName,
-                    pwd :pwd,
-                    captch:captch
+                data: {
+                    loginName: loginName,
+                    pwd: pwd,
+                    captcha: captcha
                 },
-
-                success:function (data) {
+                success: function (data) {
                     log(data);
+                    var code = data.resultCode;
+                    if (code == 102) {
+//zhang                 log(code);
+                        $("#loginName").focus();
+                        layer.tips('账号密码不正确！', '#loginName', {
+                            tips: [2, '#076BAB']
+                        });
 
-                    if(data.code==0){
-
-
-                        window.location.href="/view/index.html";
+                    }
+                    if (code == 103) {
+                        log(code);
+                        $("#captcha").focus();
+                        layer.tips('验证码不正确！', '#captcha', {
+                            tips: [2, '#076BAB']
+                        });
                     }
 
-
-
-
-
-                },error:function (data) {
-
-
-
+                    if (data.resultCode == 0) {
+                        window.location.href = "index.html";
+                    }
+                }, error: function (data) {
                 }
-
             })
-
-
-
         }
-
     }
-
-
 </script>
 
 

@@ -8,6 +8,7 @@
     <name>life-web Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <!-- 集中定义依赖版本号 -->
+    <!--http://blog.csdn.net/qq_32588349/article/details/51461182-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jfinal.version>3.0</jfinal.version>
@@ -35,6 +36,12 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <!--图片压缩-->
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-compiler-javac</artifactId>
+            <version>1.8.1</version>
         </dependency>
 
         <dependency>

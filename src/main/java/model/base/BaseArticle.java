@@ -9,76 +9,76 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 public abstract class BaseArticle<M extends BaseArticle<M>> extends Model<M> implements IBean {
 
-	public void setId(java.lang.Integer id) {
-		set("id", id);
-	}
+    public void setId(java.lang.Integer id) {
+        set("id", id);
+    }
 
-	public java.lang.Integer getId() {
-		return get("id");
-	}
+    public java.lang.Integer getId() {
+        return get("id");
+    }
 
-	public void setArticleNo(java.lang.String articleNo) {
-		set("articleNo", articleNo);
-	}
+    public void setArticleNo(java.lang.String articleNo) {
+        set("articleNo", articleNo);
+    }
 
-	public java.lang.String getArticleNo() {
-		return get("articleNo");
-	}
+    public java.lang.String getArticleNo() {
+        return get("articleNo");
+    }
 
-	public void setTitle(java.lang.String title) {
-		set("title", title);
-	}
+    public void setTitle(java.lang.String title) {
+        set("title", title);
+    }
 
-	public java.lang.String getTitle() {
-		return get("title");
-	}
+    public java.lang.String getTitle() {
+        return get("title");
+    }
 
-	public void setPoster(java.lang.String poster) {
-		set("poster", poster);
-	}
+    public void setPoster(java.lang.String poster) {
+        set("poster", poster);
+    }
 
-	public java.lang.String getPoster() {
-		return get("poster");
-	}
+    public java.lang.String getPoster() {
+        return get("poster");
+    }
 
-	public void setContent(java.lang.String content) {
-		set("content", content);
-	}
+    public void setContent(java.lang.String content) {
+        set("content", content);
+    }
 
-	public java.lang.String getContent() {
-		return get("content");
-	}
+    public java.lang.String getContent() {
+        return get("content");
+    }
 
-	public void setPublishTime(java.util.Date publishTime) {
-		set("publishTime", publishTime);
-	}
+    public void setPublishTime(java.util.Date publishTime) {
+        set("publishTime", publishTime);
+    }
 
-	public java.util.Date getPublishTime() {
-		return get("publishTime");
-	}
+    public java.util.Date getPublishTime() {
+        return get("publishTime");
+    }
 
-	public void setUserNo(java.lang.String userNo) {
-		set("userNo", userNo);
-	}
+    public void setUserNo(java.lang.String userNo) {
+        set("userNo", userNo);
+    }
 
-	public java.lang.String getUserNo() {
-		return get("userNo");
-	}
+    public java.lang.String getUserNo() {
+        return get("userNo");
+    }
 
-	public void setUpdateTime(java.util.Date updateTime) {
-		set("updateTime", updateTime);
-	}
+    public void setUpdateTime(java.util.Date updateTime) {
+        set("updateTime", updateTime);
+    }
 
-	public java.util.Date getUpdateTime() {
-		return get("updateTime");
-	}
+    public java.util.Date getUpdateTime() {
+        return get("updateTime");
+    }
 
-	public void setDelFlag(java.lang.String delFlag) {
-		set("del_flag", delFlag);
-	}
+    public void setDelFlag(java.lang.String delFlag) {
+        set("del_flag", delFlag);
+    }
 
-	public java.lang.String getDelFlag() {
-		return get("del_flag");
-	}
+    public java.lang.String getDelFlag() {
+        return get("del_flag");
+    }
 
 }

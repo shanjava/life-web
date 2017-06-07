@@ -13,6 +13,11 @@ public enum Code {
     LOGINSUCCESS("100","登录成功"),
     LOGINFAIL("102", "账号密码错误"),
     CAPTCHFAIL("103", "验证码错误"),
+    TOKENFAIL("104","token验证失败"),
+
+
+
+    SESSIONFAIL("1001","/login.html"),
 
 //  视频 200-299
     PULLSUCCESS("200",""),

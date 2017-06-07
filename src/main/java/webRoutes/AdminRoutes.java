@@ -3,6 +3,7 @@ package webRoutes;
 import com.jfinal.config.Routes;
 import controller.admin.CaptchaController;
 import controller.admin.LoginController;
+import controller.admin.SystemController;
 import  controller.admin.TextController;
 
 /**
@@ -11,11 +12,10 @@ import  controller.admin.TextController;
  */
 public class AdminRoutes extends Routes {
     public void config() {
-       // this.setBaseViewPath("/WEB-INF");
         this.add("/", TextController.class);
         this.add("/captcha", CaptchaController.class);
         this.add("/login", LoginController.class);
-//        this.add("/usr", UsrController.class);
+        this.add("/system", SystemController.class);
 
     }
 }

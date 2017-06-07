@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by Mac on 2017/5/11.
  */
-public class baseController extends Controller {
+public class BaseController extends Controller {
 
     protected JsonEntity json = new JsonEntity();
 

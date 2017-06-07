@@ -16,17 +16,7 @@
  *
  */
 
-//同步改变事件 ------onchang(this)
-function changeInput(element) {
-    $("#" + $(element).attr("id") + "2").val($(element).val());
-};
 
-// 获取当前网址的某个参数值
-function getQueryString(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]); return null;
-}
 
 
 //删除事件
